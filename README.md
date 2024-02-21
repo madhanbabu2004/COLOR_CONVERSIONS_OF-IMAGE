@@ -36,54 +36,121 @@ Split and Merge RGB Image
 Split and merge HSV Image
 
 ##### Program:
-### Developed By:
-### Register Number: 
+```
+import cv2
+
+image = cv2.imread('g.png')
+
+cv2.imshow('Original Image', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+cv2.imwrite('original_image.jpg', image)
+
+hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+ycrcb_image = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
+
+hsv_to_rgb_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)
+
+cv2.imshow('HSV Image', hsv_image)
+cv2.imshow('Grayscale Image', gray_image)
+cv2.imshow('YCrCb Image', ycrcb_image)
+cv2.imshow('HSV to RGB Image', hsv_to_rgb_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+cv2.imwrite('hsv_image.jpg', hsv_image)
+cv2.imwrite('gray_image.jpg', gray_image)
+cv2.imwrite('ycrcb_image.jpg', ycrcb_image)
+cv2.imwrite('hsv_to_rgb_image.jpg', hsv_to_rgb_image)
+
+height, width, channels = image.shape
+print("Image Height:", height)
+print("Image Width:", width)
+print("Number of Channels:", channels)
+
+row = 100
+col = 150
+pixel_value = image[row, col]
+print("Pixel value at row", row, "and column", col, ":", pixel_value)
+
+channel_value = image[row, col, 0]  # Assuming the image is in BGR format
+print("Blue channel value at row", row, "and column", col, ":", channel_value)
+
+row_index = 200
+selected_row = image[row_index, :]
+print("Selected Row:", selected_row)
+
+col_index = 300
+selected_col = image[:, col_index]
+print("Selected Column:", selected_col)
+
+start_row, start_col = 100, 100
+end_row, end_col = 300, 300
+
+cut_region = image[start_row:end_row, start_col:end_col]
+
+paste_row, paste_col = 400, 400
+image[paste_row:paste_row+cut_region.shape[0], paste_col:paste_col+cut_region.shape[1]] = cut_region
+
+cv2.imshow('Modified Image', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+cv2.imwrite('modified_image.jpg', image)
+
+```
+### Developed By:MADHAN BABU P
+### Register Number: 212222230075
 
 
 ## Output:
 
 ### i) Read and display the image
 
-<br>
-<br>
+![output](./a.png)
+
 
 ### ii)Write the image
 
-<br>
-<br>
+![output](./a.png)
+
 
 ### iii)Shape of the Image
 
-<br>
-<br>
+![output](./f.png)
+
 
 ### iv)Access rows and columns
-<br>
-<br>
+![output](./g.png)
+
 
 ### v)Cut and paste portion of image
-<br>
-<br>
+![output](./h.png)
+
 
 ### vi) BGR and RGB to HSV and GRAY
-<br>
-<br>
+![output](./d.png)
+
 
 ### vii) HSV to RGB and BGR
-<br>
-<br>
+![output](./b.png)
+
 
 ### viii) RGB and BGR to YCrCb
-<br>
-<br>
+![output](./c.png)
+
 
 ### ix) Split and merge RGB Image
-<br>
-<br>
+
+![output](./e.png)
 
 ### x) Split and merge HSV Image
-<br>
-<br>
+![output](./c.png)
+
 
 
 
