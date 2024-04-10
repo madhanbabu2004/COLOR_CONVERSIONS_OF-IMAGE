@@ -116,7 +116,7 @@ cv2.imwrite('modified_image.jpg', image)
 
 ### ii)Write the image
 
-![output](./a.png)
+![output](./1.png)
 
 
 ### iii)Shape of the Image
@@ -146,10 +146,10 @@ cv2.imwrite('modified_image.jpg', image)
 
 ### ix) Split and merge RGB Image
 
-![output](./e.png)
+![output](./2.png)
 
 ### x) Split and merge HSV Image
-![output](./c.png)
+![output](./3.png)
 
 
 
