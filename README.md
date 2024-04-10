@@ -47,25 +47,6 @@ cv2.destroyAllWindows()
 
 cv2.imwrite('original_image.jpg', image)
 
-hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-ycrcb_image = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
-
-hsv_to_rgb_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)
-
-cv2.imshow('HSV Image', hsv_image)
-cv2.imshow('Grayscale Image', gray_image)
-cv2.imshow('YCrCb Image', ycrcb_image)
-cv2.imshow('HSV to RGB Image', hsv_to_rgb_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
-cv2.imwrite('hsv_image.jpg', hsv_image)
-cv2.imwrite('gray_image.jpg', gray_image)
-cv2.imwrite('ycrcb_image.jpg', ycrcb_image)
-cv2.imwrite('hsv_to_rgb_image.jpg', hsv_to_rgb_image)
 
 height, width, channels = image.shape
 print("Image Height:", height)
@@ -102,6 +83,55 @@ cv2.destroyAllWindows()
 
 cv2.imwrite('modified_image.jpg', image)
 
+import cv2
+img = cv2.imread('g.png')
+hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imshow('Original Image', img)
+cv2.imshow('HSV Image', hsv_img)
+cv2.imshow('Grayscale Image', gray_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+import cv2
+img = cv2.imread('g.png')
+hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+rgb_img = cv2.cvtColor(hsv_img, cv2.COLOR_HSV2RGB)
+bgr_img = cv2.cvtColor(hsv_img, cv2.COLOR_HSV2BGR)
+cv2.imshow('HSV Image', hsv_img)
+cv2.imshow('RGB Image', rgb_img)
+cv2.imshow('BGR Image', bgr_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+import cv2
+img = cv2.imread('g.png')
+ycrcb_img = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+cv2.imshow('Original Image', img)
+cv2.imshow('YCrCb Image', ycrcb_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+import cv2
+img = cv2.imread('g.png')
+b, g, r = cv2.split(img)
+merged_img = cv2.merge((b, g, r))
+cv2.imshow('Original Image', img)
+cv2.imshow('Merged Image', merged_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+import cv2
+img = cv2.imread('g.png')
+hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+h, s, v = cv2.split(hsv_img)
+merged_hsv_img = cv2.merge((h, s, v))
+merged_bgr_img = cv2.cvtColor(merged_hsv_img, cv2.COLOR_HSV2BGR)
+cv2.imshow('Original Image', img)
+cv2.imshow('Merged HSV Image', merged_bgr_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
 ```
 ### Developed By:MADHAN BABU P
 ### Register Number: 212222230075
@@ -134,14 +164,18 @@ cv2.imwrite('modified_image.jpg', image)
 
 ### vi) BGR and RGB to HSV and GRAY
 ![output](./d.png)
+![output](./c.png)
 
 
 ### vii) HSV to RGB and BGR
 ![output](./b.png)
+![output](./2.png)
 
 
 ### viii) RGB and BGR to YCrCb
-![output](./c.png)
+![output](./b.png)
+![output](./e.png)
+
 
 
 ### ix) Split and merge RGB Image
